@@ -1,13 +1,13 @@
 # Hidden Markov Models
 
+Useful Links:
+- Problem Statement: https://cmutschler.de/datafest-tool-tracking-with-machine-learning
 
-Problem Statement: https://cmutschler.de/datafest-tool-tracking-with-machine-learning
+- Data Description: https://cmutschler.de/datasets/tool-tracking-dataset
 
-Data Description: https://cmutschler.de/datasets/tool-tracking-dataset
+- Data Repository: https://github.com/mutschcr/tool-tracking
 
-Data Repository: https://github.com/mutschcr/tool-tracking
-
-HDP-HSMM: https://github.com/mattjj/pyhsmm
+- HDP-HSMM: https://github.com/mattjj/pyhsmm
 
 ## References
 
