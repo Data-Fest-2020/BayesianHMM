@@ -1,1 +1,1 @@
-# BayesianHMM
+# Hidden Markov Models
