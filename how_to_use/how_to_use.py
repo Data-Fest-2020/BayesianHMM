@@ -4,21 +4,38 @@ Created on Sat Aug 29 11:13:10 2020
 @author: sds
 """
 
-# how to use e.g. in spyder
-
-
-
 # import modules
-import numpy as np
 import hiddensmmodel
-
+import load_data
+from matplotlib import pyplot as plt
 
 # load data: nparray without timestamp
-T = 10000
-data = np.loadtxt('example-data.txt')[:T]
+mytool = "electric_screwdriver"
+# mytool = "pneumatic_screwdriver"
+# mytool = "pneumatic_rivet_gun"
+data = load_data.load_data(mytool)
 
 # train model
-model = hiddensmmodel.Hsmm(data)
+model = hiddensmmodel.Hsmm(data[13])
 
-# estimated state sequenece to evaluate
-model.states
+y_hat = model.states
+y_hat = y_hat[0]
+y_true = data[14]
+
+plt.plot(y_true[10000:15000], 'bo', markersize=0.5)
+plt.show()
+
+plt.plot(y_hat[10000:15000], 'bo', markersize=0.5)
+plt.show()
+
+plt.plot(y_true[1:5000], 'bo', markersize=0.5)
+plt.show()
+
+plt.plot(y_hat[1:5000], 'bo', markersize=0.5)
+plt.show()
+
+plt.plot(y_true[15000:20000], 'bo', markersize=0.5)
+plt.show()
+
+plt.plot(y_hat[15000:20000], 'bo', markersize=0.5)
+plt.show()
