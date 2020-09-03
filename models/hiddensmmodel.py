@@ -15,7 +15,7 @@ class Hsmm:
     use 
     '''
     
-    def __init__(self, nparray):
+    def __init__(self, nparray, Nmax):
         
         # nparray input
         self.nparray = nparray
@@ -31,10 +31,10 @@ class Hsmm:
         
         # define duration parameters
         self.dur_hypparams = {'alpha_0':2*30,
-                         'beta_0':2}
+                              'beta_0':2}
         
         # define max hidden states to uncover
-        self.Nmax = 10
+        self.Nmax = Nmax
         
         # init emission distributions
         self.obs_distns = [pyhsmm.distributions.Gaussian(**self.obs_hypparams) 

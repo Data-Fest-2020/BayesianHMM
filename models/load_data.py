@@ -24,17 +24,17 @@ def load_data(mytool):
         gyr = data.gyr
         mag = data.mag
         mic = data.mic
-        data = pd.merge_asof(acc,gyr,
-                             left_on="time [s]",
-                             right_on="time [s]",
-                             direction="nearest")
-
-        data = pd.merge_asof(data,mag,
+        data = pd.merge_asof(mag,gyr,
                              left_on="time [s]",
                              right_on="time [s]",
                              direction="nearest")
 
         data = pd.merge_asof(data,mic,
+                             left_on="time [s]",
+                             right_on="time [s]",
+                             direction="nearest")
+
+        data = pd.merge_asof(data,acc,
                              left_on="time [s]",
                              right_on="time [s]",
                              direction="nearest")
