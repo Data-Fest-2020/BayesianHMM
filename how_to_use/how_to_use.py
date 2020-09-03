@@ -11,14 +11,14 @@ from matplotlib import pyplot as plt
 import pandas as pd
 
 # load data: nparray without timestamp
-#mytool = "electric_screwdriver"
+mytool = "electric_screwdriver"
 #mytool = "pneumatic_screwdriver"
-mytool = "pneumatic_rivet_gun"
+#mytool = "pneumatic_rivet_gun"
 
 data = load_data.load_data(mytool)
 
 # train model
-model = hiddensmmodel.Hsmm(data[13], Nmax = 100)
+model = hiddensmmodel.Hsmm(data[13], Nmax = 8, trunc = 1000)
 
 y_hat = model.states
 y_hat = y_hat[0]
