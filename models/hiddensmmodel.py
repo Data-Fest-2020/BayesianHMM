@@ -15,7 +15,7 @@ class Hsmm:
     use 
     '''
     
-    def __init__(self, nparray, Nmax):
+    def __init__(self, nparray, Nmax, trunc):
         
         # nparray input
         self.nparray = nparray
@@ -50,7 +50,7 @@ class Hsmm:
                                                     dur_distns=self.dur_distns)
         
         # add data 
-        self.posteriormodel.add_data(self.nparray, trunc=60)
+        self.posteriormodel.add_data(self.nparray, trunc=trunc)
         
         # train the model
         for idx in progprint_xrange(200):
