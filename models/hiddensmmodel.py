@@ -53,11 +53,20 @@ class Hsmm:
         self.posteriormodel.add_data(self.nparray, trunc=60)
         
         # train the model
-        for idx in progprint_xrange(200):
+        for idx in progprint_xrange(150):
             self.posteriormodel.resample_model()
 
         # results
         self.states = self.posteriormodel.stateseqs
+
+    # predict method
+    def predict(self, nparray):
+        '''
+        this method predicts hidden states via resampling
+        '''
+        predicted_states = self.posteriormodel.predict(nparray, 0)[1]
+
+        return predicted_states
 
             
             
