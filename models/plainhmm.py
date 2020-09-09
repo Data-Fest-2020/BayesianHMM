@@ -8,7 +8,7 @@ import numpy as np
 from hmmlearn.hmm import GaussianHMM
 
 
-class hmm:
+class Hmm:
     '''
     this instance is useful for training hmm with gaussians
     use
@@ -26,14 +26,14 @@ class hmm:
         self.model = GaussianHMM(self.number_of_states)
 
         # train model
-        self.model.fit(self.number_of_states)
+        self.model.fit(self.nparray)
 
-        # states infered from training data
-        self.states = self.model.predic(self.nparray)
+        # states inferred from training data
+        self.states = self.model.predict(self.nparray)
 
     # predict method
     def predict(self, test_nparray):
 
-        predicted_states = self.predict(test_nparray)
+        predicted_states = self.model.predict(test_nparray)
 
         return predicted_states
