@@ -58,23 +58,3 @@ class Hsmm:
 
         # results
         self.states = self.posteriormodel.stateseqs
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
