@@ -1,0 +1,40 @@
+"""
+Created on Sun Sep 20 13:05:12 2020
+
+@author: schep
+"""
+
+
+import numpy as np
+import sklearn
+import pandas as pd
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
+import matplotlib.pyplot as plt
+import math
+
+
+def plotAnomalies(y_true, y_hat):
+    
+    y_hat = y_hat.astype('float')
+    y_hat = y_hat+0.1
+    y_true = y_true.astype('float')
+    
+    y_hat = pd.Series(y_hat)
+    y_true = pd.Series(y_true)
+
+    math.ceil(4.2)
+    
+    num_plots = math.ceil(len(y_hat) / 5000)
+    #num_plots = num_plots.astype('category')
+
+    i = 0
+    m = 5000
+
+    for s in range(num_plots): 
+        plt.plot(y_true[i:m],'bo', markersize=0.5, label = "y_true")
+        plt.plot(y_hat[i:m],'ro', markersize=0.5, label = "y_hat")
+        plt.legend(loc="upper right")
+        plt.show() 
+        i = i + 5000
+        m = m + 5000
