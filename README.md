@@ -1,6 +1,6 @@
 # Paper
 To repoduce the computations of the submitted paper.
-1) Install physmm:
+1) Install physmm: (works on Ubuntu, does not work on windows)
 - git clone pyhsmm
 - install pybasicbayes
 - go to folder pyhsmm
